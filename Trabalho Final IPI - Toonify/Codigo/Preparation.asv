@@ -1,0 +1,23 @@
+close all;
+clear all.
+clc;
+% Buscando diretório de imagens originais
+myFolder = 'D:\MATLAB\IPI\Trabalho Final IPI - Toonify\ImagensTeste';
+if ~isfolder(myFolder)
+    sprintf('Error: Folder %s does not exist', myFolder);
+    return;
+end
+filepadrao = fullfile(myFolder,'*.jpg');
+Diretorio = dir(filepadrao);
+
+% Varrendo cada imagem no diretório
+for posfile = 1:length(Diretorio)
+    imagemOriginal = imread(Diretorio(posfile).name);
+    figure, imshow(imagemOriginal);
+    imagemGray = rgbtogray(imagemOriginal);
+    figure, imshow(imagemGray(:,:,1));
+end
+
+    
+    
+
