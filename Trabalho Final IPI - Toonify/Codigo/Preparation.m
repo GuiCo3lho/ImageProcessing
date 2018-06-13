@@ -1,7 +1,7 @@
 close all;
-clear all.
+clear all;
 clc;
-% Buscando diretório de imagens originais
+% Buscando diretÃ³rio de imagens originais
 myFolder = 'D:\MATLAB\IPI\Trabalho Final IPI - Toonify\ImagensTeste';
 % Verificar se o diretorio existe
 if ~isfolder(myFolder)
@@ -12,7 +12,7 @@ end
 filepadrao = fullfile(myFolder,'*.jpg');
 Diretorio = dir(filepadrao);
 
-% Varrendo cada imagem no diretório
+% Varrendo cada imagem no diretÃ³rio
 for posfile = 1:length(Diretorio)
     imagemOriginal = imread(Diretorio(posfile).name);
     figure, imshow(imagemOriginal);
