@@ -2,10 +2,10 @@ close all;
 clear all.
 clc;
 cd ../ImagensTeste/;
-Diretorio = dir('*.jpg');
+Diretorio = dir('*.jpg');%Armazena número de arquivos do tipo .jpg
 
-% Varrendo cada imagem no diretório
-% for posfile = 1:length(Diretorio)
+%Varrendo cada imagem no diretório
+%for posfile = 1:length(Diretorio)
 for posfile = 1:length(Diretorio)
     
     imagemOriginal = imread(Diretorio(posfile).name);%ler cada foto do arquivo
@@ -16,11 +16,11 @@ for posfile = 1:length(Diretorio)
    
     finaledges = edgeprocessing(fmgrayimage); %processamento de edges
     
-    imageAddEdges = immultiply(imagemGray,finaledges);%por as bordas feitas no imdilate na imagem gray
+    imageAddEdges = immultiply(imagemGray,finaledges);%por as bordas feitas no edgeprocessing na imagem gray
     
     %transferindo para pasta de ImagensCartoon os resultados
     DiretorioResultado = sprintf('../ImagensCartoon/cartoon_%d.jpg', posfile);  
-    imwrite(imageAddEdges, DiretorioResultado);
+    imwrite(finaledges, DiretorioResultado);
     
 end
 
