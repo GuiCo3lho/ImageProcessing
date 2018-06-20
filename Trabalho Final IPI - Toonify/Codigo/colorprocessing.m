@@ -1,4 +1,4 @@
-function [ImgColorFiltered] = ColorPreparation(ImagemEntrada)
+function [ImgColorFiltered] = colorprocessing(ImagemEntrada)
   
   % Diminuindo a escala da imagem para reduzir o custo computacional da
   % filtragem bilateral
@@ -7,6 +7,7 @@ function [ImgColorFiltered] = ColorPreparation(ImagemEntrada)
   ImagemEntrada(:,:,1)=medfilt2(ImagemEntrada(:,:,1), [7 7]);
   ImagemEntrada(:,:,2)=medfilt2(ImagemEntrada(:,:,2), [7 7]);
   ImagemEntrada(:,:,3)=medfilt2(ImagemEntrada(:,:,3), [7 7]);
+  
   
   ImgFiltroBilateral=imbilatfilt(ImagemEntrada); 
   
