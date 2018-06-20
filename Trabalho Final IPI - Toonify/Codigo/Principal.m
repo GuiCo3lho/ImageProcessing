@@ -19,7 +19,7 @@ for posfile = 1:length(Diretorio)
     imageAddEdges = immultiply(imagemGray,finaledges);%por as bordas feitas no edgeprocessing na imagem gray
     
   
-    color = ColorPreparation(imagemOriginal);
+    color = colorprocessing(imagemOriginal);
     
     edges=zeros(h,w,c,'uint8');
     edges(:,:,1)=finaledges;
