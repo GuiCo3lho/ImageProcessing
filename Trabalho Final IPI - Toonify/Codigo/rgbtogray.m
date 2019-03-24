@@ -16,7 +16,8 @@ grayimage = newImage; %retorna YCbCr components
 end
 
 
-%function filtredimage_m = medianfilter(image)
+
+
 
 
 
